@@ -1,4 +1,4 @@
-# ToolSpec 1.6.1
+# ToolSpec 1.6.2
 
 ToolSpec is a language-independent contract for self-describing executable JSON tools. This repository contains the Python reference implementation. ToolHub is one possible consumer; MCP adapters can map ToolSpec schemas without making MCP a dependency.
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.2 - 2026-09-26
+
+- ToolSpec format remains 1.7.
+- Fixed strict-model generation so Pydantic field metadata is preserved in published JSON Schema.
+- Field descriptions, aliases, constraints, defaults, and JSON Schema extras now survive strict conversion.
+- Added regression coverage for root, nested, input, and output schema field metadata.
+
 ## 1.6.1 - 2026-09-25
 
 - `examples/list_directory`: `path` is now required; generated `inputSchema` lists it in `required`.

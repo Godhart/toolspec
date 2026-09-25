@@ -1,5 +1,6 @@
 from __future__ import annotations
 import io, json, os, sys
+from copy import copy
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, ClassVar, Generic, TypeVar, get_args, get_origin, Annotated, Union
@@ -47,8 +48,12 @@ def _strict_model(model: type[BaseModel]) -> type[BaseModel]:
     fields={}
     for name, field in model.model_fields.items():
         annotation=_strict_annotation(field.annotation)
-        default=field.default if not field.is_required() else ...
-        fields[name]=(annotation, default)
+        # Preserve the complete Pydantic FieldInfo.  Reconstructing a field from
+        # only its default loses schema metadata such as description, aliases,
+        # constraints, examples, deprecation markers, and JSON Schema extras.
+        field_info=copy(field)
+        field_info.annotation=annotation
+        fields[name]=(annotation, field_info)
 
     config=dict(model.model_config)
     config["extra"]="forbid"

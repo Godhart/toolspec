@@ -34,6 +34,7 @@ def test_list_directory_schema_requires_path():
     assert result.returncode==0
     schema=json.loads(result.stdout)["inputSchema"]
     assert "path" in schema["required"]
+    assert schema["properties"]["path"]["description"] == "Directory to list"
 
 def test_list_directory_missing_path_is_validation_error():
     result=_run("{}")

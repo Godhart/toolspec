@@ -2,7 +2,7 @@ from pathlib import Path
 import tomllib
 import toolspec
 
-EXPECTED_PACKAGE_VERSION = "1.6.1"
+EXPECTED_PACKAGE_VERSION = "1.6.2"
 
 def test_release_version_is_consistent():
     root = Path(__file__).resolve().parents[1]
@@ -16,10 +16,10 @@ def test_release_version_is_consistent():
 
 def test_release_documents_and_verifier_versions_are_current():
     root = Path(__file__).resolve().parents[1]
-    assert (root / "README.md").read_text(encoding="utf-8").splitlines()[0] == "# ToolSpec 1.6.1"
+    assert (root / "README.md").read_text(encoding="utf-8").splitlines()[0] == "# ToolSpec 1.6.2"
     assert (root / "TOOLSPEC.md").read_text(encoding="utf-8").splitlines()[0] == "# ToolSpec 1.7"
     verifier = (root / "scripts" / "verify_package.py").read_text(encoding="utf-8")
-    assert "toolspec.__version__=='1.6.1'" in verifier
+    assert "toolspec.__version__=='1.6.2'" in verifier
 
 
 def test_mit_license_is_declared_and_present():
