@@ -9,7 +9,7 @@ from toolspec import Requirements, Tool
 
 
 class Input(BaseModel):
-    path: str = Field(".", description="Directory to list")
+    path: str = Field(..., description="Directory to list")
 
 
 class Entry(BaseModel):

@@ -1,4 +1,4 @@
-# ToolSpec 1.4
+# ToolSpec 1.7
 
 ToolSpec is a small, language-independent contract for exposing an executable program as a self-describing JSON tool. `toolspec` is the Python reference implementation. ToolHub is one possible consumer. The contract does not require ToolHub, Python, MCP, or any particular agent framework.
 

@@ -2,6 +2,12 @@
 
 ## 1.6.1 - 2026-09-25
 
+- `examples/list_directory`: `path` is now required; generated `inputSchema` lists it in `required`.
+
+- Corrected current-version references in README, ToolSpec specification heading, and package verifier.
+- Added the MIT license and package license metadata.
+- Expanded release consistency tests to cover documentation, verifier, and license metadata.
+
 - ToolSpec format remains 1.7.
 - Fixed stale subprocess regression expectations after JSON became the default error format.
 - Added subprocess coverage for default JSON biz errors, JSON debug traceback, and human native traceback.
